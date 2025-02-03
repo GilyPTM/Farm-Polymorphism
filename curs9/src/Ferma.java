@@ -1,38 +1,19 @@
 public class Ferma {
 
-    public static void main(String[] args) {
-
-        Animal animalCow = receiveAnimal(1);
-        Animal animalHorse = receiveAnimal(2);
-        Animal anotherAnimal = receiveAnimal(4994);
-
-        System.out.println(animalCow);
-        animalCow.walk();
-            if(animalCow instanceof Cow){
-                ( (Cow) animalCow).provideMilk();
-            }
-
-        System.out.println(animalHorse);
-        animalHorse.walk();
-        if (animalHorse instanceof Cow){
-            ((Cow)animalHorse).provideMilk();
-        } else {
-            System.out.println(animalHorse + " cannot provide milk!");
-        }
-        System.out.println(anotherAnimal);
-        anotherAnimal.walk();
-    }
-
-    static Animal receiveAnimal(int type) {
+    Animal putAnimal(AnimalType type) {
         switch (type) {
-            case 1:
+            case COW: // Cow
                 Cow cow = new Cow();
                 return cow;
-            case 2:
+            case HORSE:
                 Horse horse = new Horse();
                 return horse;
-
+            case PIG:
+                Pig pig = new Pig();
+                return pig;
         }
-        return null;
+        Animal animal = new Animal(AnimalType.UNKNOWN);
+        return animal;
     }
+
 }

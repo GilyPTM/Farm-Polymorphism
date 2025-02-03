@@ -1,9 +1,11 @@
-public class Horse  extends Animal{
+public class Horse extends Animal {
 
+    // Every horse has-a Rider
+    Rider rider;
     boolean withShoes;
 
-    Horse(){
-        super("Horse");
+    Horse() {
+        super(AnimalType.HORSE);
     }
 
     public boolean isWithShoes() {
@@ -14,5 +16,18 @@ public class Horse  extends Animal{
         this.withShoes = withShoes;
     }
 
+    void addsRider(Rider rider) {
+        this.rider = rider;
+    }
 
+    public Rider getRider() {
+        return rider;
+    }
+
+    @Override
+    public String toString() {
+        return "Horse (type = " + type + ") has " +
+                "rider " + rider +
+                ", withShoes: " + withShoes;
+    }
 }

@@ -1,8 +1,8 @@
 public class Animal {
 
-    private String type;
+    protected AnimalType type;
 
-    public Animal(String type) {
+    public Animal(AnimalType type) {
         this.type = type;
     }
 
@@ -12,7 +12,7 @@ public class Animal {
                 "type " + type;
     }
 
-    void walk(){
-        System.out.println("Animal of type " + type + " walks!");
+    void walk() {
+        System.out.println("Animal of type " + type + " walks");
     }
 }
